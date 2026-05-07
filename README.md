@@ -1,10 +1,25 @@
 # proof-star-convergence
 
-Formal verification of the Large Star / Small Star connected components algorithm in Rocq, paired with an empirical convergence benchmark in PySpark. The Rocq proof establishes that the algorithm is correct at fixpoint. The benchmark measures how many rounds it actually takes to get there across three graph types.
-
-The two parts are independent but tell a complete story together: the proof says the answer is right whenever the algorithm stops, and the benchmark shows how quickly it stops in practice.
-
+Formal verification of the Large Star / Small Star connected components algorithm in Rocq.
+The two parts are independent but tell a complete story together.
 For more detail on each part, see the individual READMEs inside `rocq/` and `spark/`.
+
+---
+
+## Why This Matters
+
+Connected components is not an academic toy problem. It is one of the core
+primitives in large scale graph processing at companies like LinkedIn, Twitter,
+and Facebook. LinkedIn uses it to power the "People You May Know" feature:
+finding everyone in your extended professional network means finding all nodes
+in the same connected component of a graph with hundreds of millions of nodes.
+Twitter uses it for community detection and to identify clusters of related
+accounts. Facebook runs it as part of their social graph analysis pipeline.
+
+
+- The Large Star / Small Star algorithm is what LinkedIn actually deployed for this problem at scale.
+- This project formally verifies its correctness in Rocq.
+- The proof gives a machine-checked guarantee that the algorithm produces the right answer at fixpoint, for any graph, not just the ones you tested.
 
 ---
 
