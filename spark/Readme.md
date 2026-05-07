@@ -79,7 +79,10 @@ def run_until_fixpoint(edges):
 ## Results
 
 ![Rounds to convergence by graph type](results/rounds_convergence.jpeg)
-Rounds to fixpoint for chain, star, and random graphs from 100 to 10000 nodes.
+Rounds to fixpoint across chain, star, and random graphs from 100 to 10000 nodes.
+The star line is not visible at this scale because it converges in exactly 2 rounds
+regardless of size, which is indistinguishable from 0 on a y-axis that reaches 10000.
+
 
 ![Wall clock time by graph type](results/wall_clock_time.jpeg)
 Wall clock time in seconds for the same graphs and sizes.
